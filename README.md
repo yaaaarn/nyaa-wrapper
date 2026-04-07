@@ -1,2 +1,2 @@
-# acgnx-api
-Wrapper for Acgnx Torrent Website
+# nyaa-wrapper
+Wrapper for nyaa Torrent Website
