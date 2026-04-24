@@ -1,0 +1,53 @@
+{
+  "name": "nyaa-ts",
+  "version": "1.0.0",
+  "description": "TypeScript client for searching Nyaa torrents",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "build": "npm run clean && tsc -p tsconfig.json",
+    "test": "npm run build && node --test",
+    "prepack": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogux/nyaa-wrapper.git"
+  },
+  "keywords": [
+    "nyaa",
+    "torrent",
+    "anime",
+    "typescript"
+  ],
+  "author": "diogux",
+  "license": "ISC",
+  "type": "commonjs",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20.18.1"
+  },
+  "bugs": {
+    "url": "https://github.com/diogux/nyaa-wrapper/issues"
+  },
+  "homepage": "https://github.com/diogux/nyaa-wrapper#readme",
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0"
+  }
+}
