@@ -13,8 +13,13 @@ const SORT_MAP: Record<NyaaSortBy, string> = {
 };
 
 export default class NyaaClient {
-  private readonly baseUrl = 'https://nyaa.si/';
-  private readonly searchUrl = new URL('https://nyaa.si/');
+  private readonly baseUrl: string;
+  private readonly searchUrl: URL;
+
+  constructor(public readonly url = 'https://nyaa.si/') {
+    this.baseUrl = url;
+    this.searchUrl = new URL(url);
+  }
 
   async search(query: string, options: NyaaSearchOptions = {}): Promise<NyaaResult[]> {
     const { limit, sort, order } = options;
